@@ -12,7 +12,37 @@
     <meta property="og:title" content="Premium Games & Apps Store">
     <meta property="og:description" content="Discover, explore, and download safe, top-rated mobile games and apps with exclusive bonuses.">
     <meta property="og:type" content="website">
+<style>
+/* Text selection block */
+html, body, body * {
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    -webkit-touch-callout: none !important;
+}
 
+/* Images */
+img {
+    -webkit-user-drag: none !important;
+    user-drag: none !important;
+    pointer-events: none;
+}
+
+/* Inputs ko usable rakho */
+input,
+textarea,
+[contenteditable="true"] {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default !important;
+}
+
+/* Buttons/links clickable rahenge */
+button,
+a {
+    -webkit-user-select: none !important;
+    user-select: none !important;
+}
+</style>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -1245,5 +1275,137 @@
                 .replace(/'/g, "&#039;");
         }
     </script>
+    <script>
+(function () {
+
+    /* ==============================
+       RIGHT CLICK BLOCK
+    ============================== */
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    }, true);
+
+
+    /* ==============================
+       COPY / CUT / PASTE BLOCK
+    ============================== */
+    document.addEventListener('copy', function (e) {
+        e.preventDefault();
+    }, true);
+
+    document.addEventListener('cut', function (e) {
+        e.preventDefault();
+    }, true);
+
+
+    /* ==============================
+       TEXT SELECTION BLOCK
+    ============================== */
+    document.addEventListener('selectstart', function (e) {
+
+        const target = e.target;
+
+        if (
+            target.matches &&
+            (
+                target.matches('input') ||
+                target.matches('textarea') ||
+                target.closest('[contenteditable="true"]')
+            )
+        ) {
+            return;
+        }
+
+        e.preventDefault();
+
+    }, true);
+
+
+    /* ==============================
+       IMAGE DRAG / SAVE BLOCK
+    ============================== */
+    document.addEventListener('dragstart', function (e) {
+
+        if (e.target && e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+
+    }, true);
+
+
+    /* ==============================
+       KEYBOARD BLOCK
+    ============================== */
+    document.addEventListener('keydown', function (e) {
+
+        const key = e.key.toLowerCase();
+
+        /*
+         * Block ALL Ctrl / CMD combinations
+         */
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        /*
+         * Block ALL Alt combinations
+         */
+        if (e.altKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        /*
+         * Block function keys F1-F12
+         */
+        if (/^f([1-9]|1[0-2])$/i.test(e.key)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        /*
+         * Block common browser/navigation keys
+         */
+        const blockedKeys = [
+            'printscreen',
+            'insert',
+            'delete',
+            'home',
+            'end',
+            'pagedown',
+            'pageup'
+        ];
+
+        if (blockedKeys.includes(key)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+    }, true);
+
+
+    /* ==============================
+       IMAGE CONTEXT MENU
+    ============================== */
+    document.querySelectorAll('img').forEach(function (img) {
+        img.setAttribute('draggable', 'false');
+
+        img.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        }, true);
+
+        img.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        }, true);
+    });
+
+
+})();
+</script>
 </body>
 </html>
