@@ -1432,6 +1432,21 @@ function shareGameModal() {
 
 
 })();
+// URL me ID check karke modal automatic kholne ka code
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameIdFromUrl = urlParams.get('id');
+    
+    if (gameIdFromUrl) {
+        // Data load hone ka wait karega taaki game mil jaye
+        const checkDataInterval = setInterval(() => {
+            if (window.GAME_STORE_DATA && window.GAME_STORE_DATA.length > 0) {
+                clearInterval(checkDataInterval);
+                openGameModal(gameIdFromUrl);
+            }
+        }, 100);
+    }
+});
 
         
 </script>
