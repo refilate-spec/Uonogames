@@ -503,14 +503,24 @@ a {
                 </div>
             </div>
 
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between gap-3">
-                <button id="modal-cancel-btn" class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-100 text-xs sm:text-sm">Close</button>
+                        <!-- Modal Footer -->
+            <div class="p-4 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between gap-2 sm:gap-3">
+                <!-- Close Button -->
+                <button id="modal-cancel-btn" class="px-3 sm:px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold hover:bg-slate-100 text-xs sm:text-sm">Close</button>
+                
+                <!-- Share Button (Naya Joda Gaya Button) -->
+                <button onclick="shareGameModal()" class="px-3 sm:px-4 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 font-bold text-xs sm:text-sm flex items-center gap-2 transition-colors">
+                    <i class="fa-solid fa-share-nodes text-brand-600"></i>
+                    <span class="hidden sm:inline">Share</span>
+                </button>
+
+                <!-- Download Now Button -->
                 <a id="modal-download-btn" href="#" target="_blank" class="flex-grow bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs sm:text-sm py-2.5 px-4 rounded-xl shadow-md text-center flex items-center justify-center gap-2 active:scale-95 transition-all">
                     <i class="fa-solid fa-download"></i>
                     <span>Download Now</span>
                 </a>
             </div>
+
         </div>
     </div>
 
@@ -1406,6 +1416,27 @@ a {
 
 
 })();
+function shareGameModal() {
+    // Modal se game ka title uthane ke liye (agar #modal-title me naam hai)
+    const gameTitle = document.getElementById('modal-title').innerText || document.title;
+    const shareUrl = window.location.href;
+
+    // Agar mobile/browser Web Share API support karta hai
+    if (navigator.share) {
+        navigator.share({
+            title: gameTitle,
+            text: `Check out ${gameTitle} on this site!`,
+            url: shareUrl,
+        }).catch((error) => console.log('Sharing failed', error));
+    } else {
+        // Fallback: Link copy ho jayega agar share API support na ho
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            alert("Game link copied to clipboard!");
+        });
+    }
+}
+
+        
 </script>
 </body>
 </html>
