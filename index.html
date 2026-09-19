@@ -136,10 +136,10 @@ a {
 
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col pb-16 md:pb-0 overflow-x-hidden">
 
-    <!-- Sticky Header -->
+    <!-- Sticky Header 
     <header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-            <!-- Logo & Title -->
+            <!-- Logo & Title 
             <a href="#" class="flex items-center gap-2 group">
                 <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-red-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
                     <i class="fa-solid font-bold fa-gamepad text-base sm:text-xl"></i>
@@ -150,7 +150,7 @@ a {
                 </div>
             </a>
 
-            <!-- Right Actions -->
+            <!-- Right Actions 
             <div class="flex items-center gap-2">
                 <a id="hdr-channel-btn" href="#" target="_blank" class="bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-semibold text-xs sm:text-sm px-3.5 py-1.5 sm:py-2 rounded-lg shadow-sm transition-all flex items-center gap-1.5">
                     <i class="fa-solid fa-paper-plane text-xs"></i>
@@ -159,6 +159,98 @@ a {
             </div>
         </div>
     </header>
+-->
+    <!-- Sticky Header with Advanced Navigation & 3-Layer Dropdown System -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+        <!-- Logo & Title -->
+        <a href="#" class="flex items-center gap-2 group">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-red-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                <i class="fa-solid font-bold fa-gamepad text-base sm:text-xl"></i>
+            </div>
+            <div>
+                <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 block leading-none">UONO GAME<span class="text-brand-600">STORE</span></span>
+                <span class="text-[9px] sm:text-[10px] text-slate-400 font-semibold tracking-wider uppercase block">Premium Apps</span>
+            </div>
+        </a>
+
+        <!-- Desktop Menu Bar with 3-Layer Dropdown -->
+        <nav class="hidden md:flex items-center gap-1">
+            <a href="#" class="px-3 py-2 text-xs lg:text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-all">Home</a>
+
+            <!-- 3-Layer Dropdown Menu Parent -->
+            <div class="relative group/dropdown">
+                <button class="px-3 py-2 text-xs lg:text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-all flex items-center gap-1">
+                    Categories <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover/dropdown:rotate-180"></i>
+                </button>
+
+                <!-- Layer 1 Dropdown Box -->
+                <div class="absolute top-full left-0 mt-1 w-56 bg-white border border-slate-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 z-50">
+                    <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">All Games & Apps</a>
+                    
+                    <!-- Sub-Menu Layer 2 -->
+                    <div class="relative group/sub1">
+                        <a href="#" class="px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium flex items-center justify-between">
+                            <span>Games Hub</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </a>
+
+                        <!-- Layer 2 Dropdown Box -->
+                        <div class="absolute top-0 left-full ml-1 w-56 bg-white border border-slate-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover/sub1:opacity-100 group-hover/sub1:visible transition-all duration-200">
+                            <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">Action Games</a>
+                            
+                            <!-- Sub-Menu Layer 3 -->
+                            <div class="relative group/sub2">
+                                <a href="#" class="px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium flex items-center justify-between">
+                                    <span>Multiplayer</span>
+                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                                </a>
+
+                                <!-- Layer 3 Dropdown Box -->
+                                <div class="absolute top-0 left-full ml-1 w-52 bg-white border border-slate-200 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover/sub2:opacity-100 group-hover/sub2:visible transition-all duration-200">
+                                    <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">Battle Royale</a>
+                                    <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">FPS Shooters</a>
+                                </div>
+                            </div>
+
+                            <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">Puzzle & Arcade</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="block px-4 py-2 text-xs sm:text-sm text-slate-700 hover:bg-brand-50 hover:text-brand-600 font-medium">Utility Apps</a>
+                </div>
+            </div>
+
+            <a href="#" class="px-3 py-2 text-xs lg:text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-all flex items-center gap-1">
+                <i class="fa-solid fa-fire text-amber-500"></i> Trending
+            </a>
+            <a href="#" class="px-3 py-2 text-xs lg:text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-all">Contact</a>
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2">
+            <a id="hdr-channel-btn" href="#" target="_blank" class="bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-semibold text-xs sm:text-sm px-3.5 py-1.5 sm:py-2 rounded-lg shadow-sm transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+                <span class="hidden sm:inline">Join Channel</span>
+                <span class="sm:hidden">Join</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Horizontal Scrollable Button / Filter Bar (Just below the header, manual scrollable with menu/category tabs) -->
+<div class="w-full bg-white border-b border-slate-200 py-2.5 px-3 sm:px-6 overflow-x-auto scrollbar-none">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 whitespace-nowrap" id="category-filter-bar">
+        <button data-filter="all" class="bg-brand-600 text-white px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold shadow-sm transition-all hover:bg-brand-700">All Items</button>
+        <button data-filter="home" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all">Home</button>
+        <button data-filter="games" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all"><i class="fa-solid fa-gamepad mr-1 text-brand-500"></i> Games Hub</button>
+        <button data-filter="action" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all">Action</button>
+        <button data-filter="multiplayer" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all">Multiplayer</button>
+        <button data-filter="battle-royale" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all">Battle Royale</button>
+        <button data-filter="apps" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all"><i class="fa-solid fa-mobile-screen mr-1 text-blue-500"></i> Utility Apps</button>
+        <button data-filter="trending" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all"><i class="fa-solid fa-fire text-amber-500 mr-1"></i> Trending</button>
+    </div>
+</div>
 
     <!-- Main Content Container -->
     <main class="flex-grow">
