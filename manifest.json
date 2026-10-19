@@ -1,0 +1,24 @@
+{
+  "name": "My Web App",
+  "short_name": "App",
+  "description": "A high-performance progressive web application.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8-vsAyLJp6FXO6ZSL4F2-8-ZRcu0WyMmXhT3-wnzVDk2Dien6h699iNxHnzBTIDWaORfHqceMOSM2P21MowWWkLJL86LYiq50bSmlzeU8iCn2Dut8QEjmzno1LqfKNKC_0Ftc7JKgLOoTIGEEK1MRs6lszeqH5M8xvJ_Fj4PC56v782gstsIAYUpDwaEn/s1600/20260822_143214.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8-vsAyLJp6FXO6ZSL4F2-8-ZRcu0WyMmXhT3-wnzVDk2Dien6h699iNxHnzBTIDWaORfHqceMOSM2P21MowWWkLJL86LYiq50bSmlzeU8iCn2Dut8QEjmzno1LqfKNKC_0Ftc7JKgLOoTIGEEK1MRs6lszeqH5M8xvJ_Fj4PC56v782gstsIAYUpDwaEn/s1600/20260822_143214.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
