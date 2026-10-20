@@ -587,6 +587,61 @@ a {
                     <!-- Bonus & Withdraw Dynamic Blocks -->
                 </div>
 
+
+                <!-- Premium Download & Social Channels -->
+<div id="modal-action-buttons" class="space-y-2 mb-3">
+
+    <!-- Download Button -->
+    <a id="modal-game-download"
+       href="#"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="flex items-center justify-center gap-2 w-full
+              rounded-lg bg-brand-600 hover:bg-brand-700
+              text-white text-sm font-bold
+              px-3 py-2 transition-colors duration-200">
+
+        <i class="fa-solid fa-download"></i>
+
+        <span id="modal-download-game-name">Download Game</span>
+    </a>
+
+    <!-- Social Channel Buttons -->
+    <div class="grid grid-cols-2 gap-2">
+
+        <!-- WhatsApp -->
+        <a id="modal-whatsapp-channel"
+           href="#"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center justify-center gap-1.5
+                  rounded-lg border border-green-200
+                  bg-green-50 hover:bg-green-100
+                  text-green-700 text-xs font-bold
+                  px-2 py-2 transition-colors duration-200">
+
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>WA Channel</span>
+        </a>
+
+        <!-- Telegram -->
+        <a id="modal-telegram-channel"
+           href="#"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center justify-center gap-1.5
+                  rounded-lg border border-sky-200
+                  bg-sky-50 hover:bg-sky-100
+                  text-sky-700 text-xs font-bold
+                  px-2 py-2 transition-colors duration-200">
+
+            <i class="fa-brands fa-telegram text-sm"></i>
+            <span>TG Channel</span>
+        </a>
+
+    </div>
+</div>
+
                 <!-- Tags list -->
                 <div id="modal-tags" class="flex flex-wrap gap-1.5"></div>
 
@@ -1189,6 +1244,30 @@ a {
             }
             statsBar.innerHTML = statsHTML;
 
+
+            //999999
+            // Download + Social Channel Buttons
+const modalGameDownload = document.getElementById("modal-game-download");
+const modalDownloadName = document.getElementById("modal-download-game-name");
+const whatsappChannel = document.getElementById("modal-whatsapp-channel");
+const telegramChannel = document.getElementById("modal-telegram-channel");
+
+// Dynamic game name
+modalDownloadName.textContent = `Download ${game.name || "Game"}`;
+
+// Download URL
+if (game.downloadUrl) {
+    modalGameDownload.href = game.downloadUrl;
+    modalGameDownload.classList.remove("hidden");
+} else {
+    modalGameDownload.href = "#";
+    modalGameDownload.classList.add("hidden");
+}
+
+// Social channel URLs
+whatsappChannel.href = "https://whatsapp.com/channel/0029Vb4G439DuMRaVJzV1I2G";
+telegramChannel.href = "https://t.me/indrealgames";
+            
             // Tags
             const tagsContainer = document.getElementById("modal-tags");
             if (Array.isArray(game.tags) && game.tags.length > 0) {
