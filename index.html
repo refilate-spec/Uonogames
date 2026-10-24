@@ -1351,7 +1351,7 @@ function shareGameModal() {
     if (navigator.share) {
         navigator.share({
             title: gameTitle,
-            text: `Check out ${gameTitle} on Uono Games!`,
+            text: `👉 ${gameTitle} 👇`,
             url: shareUrl,
         }).catch((error) => console.log('Sharing failed', error));
     } else {
